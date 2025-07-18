@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="Open-Sans.css">
+  <link rel="stylesheet" href="index.css">
+  <title></title>
+    <!-- 引入 Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- 引入 Slick 主题 CSS (可选) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <link href="./static/css/main.4017e162.css" rel="stylesheet">
+  <meta name="description"
+        content="Try-On Master: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-wise Diffusion Transformer Framework">
+  <title>Try-On Master Project</title>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More Research
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://github.com/bytedance/DreamFit/">
+                        DreamFit
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </nav>
+
+  <div id="root" class="column-flex">
+    <div id="title-flex" class="column-flex">
+      <h1> Try-On Master: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-wise Diffusion Transformer Framework </h1>
+     
+      <div class="flex flex-gap" style="margin-bottom:0.5em;">
+        <a target="_blank" href="" ><button>Paper</button></a>
+<!-- 	      <a target="_blank" href="" onclick="alert('Coming Soon!');return false;"><button>Paper</button></a> -->
+        <a target="_blank" href="https://tryon-master.github.io/"><button>Page</button></a>
+      </div>
+
+      <!-- Paper abstract -->
+<section class="page-abstract hero is-light">
+  <div class="container is-max-desktop">
+    <div class="is-centered has-text-centered">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified page-abstract-text">
+            <p>
+Despite the rapid advancement of video generation technologies, video virtual try-on (VVT) in unrestricted scenarios—such as challenging subject or camera motion, dynamic scenes, and diverse character styles—remains unexplored. Specifically, current approaches encounter three major limitations.
+First, these methods rely heavily on scarce paired garment-centric datasets, which significantly limits their applicability to arbitrary garments and complex video inputs.
+Second, substantial spatial misalignment arises when deforming entire garment images to spatiotemporally varying regions across video frames, which  hinders effective model convergence due to conflicts with the priors of pretrained video models. 
+Third, relying solely on front-view garment images can mislead the generation of video frames from markedly different viewpoints.
+To address these challenges, we propose <b>Try-On Master</b>, a stage-wise framework built upon Diffusion Transformers (DiTs) that systematically decomposes the VVT task into three consecutive stages.
+In the first stage, a keyframe sampling strategy is employed to identify frames exhibiting pronounced motion or viewpoint variations, thereby providing diverse and informative cues for subsequent video generation.
+Next, the second stage employs a multi-frame try-on model trained with large-scale person-to-person image data, enabling the precise mapping of arbitrary garment types onto the selected keyframes.
+Finally, the third stage introduces a multi-modal guided video editing model equipped with a visual adapter, which leverages spatially aligned keyframe try-on images generated in the previous stage, along with motion features and prompts, to synthesize visually coherent virtual try-on videos. This approach facilitates the full utilization of priors from pretrained video models and readily available unpaired human-centric videos.
+Extensive quantitative and qualitative experiments demonstrate that Try-On Master surpasses existing methods in preserving high-fidelity garment details and temporal stability in real-world scenarios. 
+            </p>
+        </div>
+    </div>
+  </div>
+</section>
+
+        <!-- <b>TL;DR</b>: We propose an end-to-end multimodality-conditioned human video generation framework named OmniHuman, which can generate human videos based on a single human image and motion signals (e.g., audio only, video only, or a combination of audio and video). In OmniHuman, we introduce a multimodality motion conditioning mixed training strategy, allowing the model to benefit from data scaling up of mixed conditioning. This overcomes the issue that previous end-to-end approaches faced due to the scarcity of high-quality data. OmniHuman significantly outperforms existing methods, generating extremely realistic human videos based on weak signal inputs, especially audio. It supports image inputs of any aspect ratio, whether they are portraits, half-body, or full-body images, delivering more lifelike and high-quality results across various scenarios.</span></small> -->
+      <!-- <small><span><b>Currently, we do not offer services/downloads anywhere, nor do we have any SNS accounts for the project.</b></span></small>
+      <small><span><b>Please be cautious of fraudulent information. We will provide timely updates on future developments.</b></span></small> -->
+      <div class='responsive-image-container'>
+        <img src='image/framework.png' alt='' />
+      </div>
+    </div>
+
+    <div id="sections" class="column-flex">
+      
+      <h3><h2 class="title" style="font-size: 32px">High-fidelity garment detail preservation under complex motion</h2></h3>
+        <p class="styled-text">
+          <b>*</b> Try-On Master enables virtual try-on of complete outfits—including tops, bottoms, skirts, shoes, socks, and more. If a user uploads only a top, the model can automatically generate and match appropriate bottoms and footwear to complete the outfit. This capability is not available in previous methods.
+        
+        </p>
+         <p class="styled-text">
+          <b>*</b> Try-On Master is capable of handling complex human motions, including runway walks and 360-degree rotations, with high fidelity in garment detail preservation and robust temporal consistency.
+        
+        </p>
+ 
+        <div class="video-slider">
+            <iframe src="https://www.youtube.com/embed/7ieP9PSjFEo" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/9jVXH_hnAZ0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/qYQMPSUeWT8" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/P1-ILYxakvw" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/2l1puHLRDoU?list=PL0HeieaD83rEqlKfnZWaY3ALqTmO7tInK" allowfullscreen></iframe>
+            
+        </div>
+
+       
+      <h3><h2 class="title" style="font-size: 32px">High-fidelity garment detail preservation in challenging scenarios</h2></h3>
+
+         <p class="styled-text">
+          <b>*</b> Try-On Master is capable of enabling virtual try-on in videos featuring subjects within complex static or dynamic environments.
+        </p>
+ 
+        <div class="video-slider">
+          <iframe src="https://www.youtube.com/embed/zvxHzeCkAwg" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/zmoFz0yn4O0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/qVLnCrHCeOg" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/5q6AlEWN7jQ" allowfullscreen></iframe>          
+        </div>
+
+
+      <h3><h2 class="title" style="font-size: 32px">High-fidelity garment rendering under challenging camera dynamics</h2></h3>
+
+         <p class="styled-text">
+          <b>*</b> Try-On Master can preserve temporal consistency and high-fidelity garment details, even when the input video features challenging camera movements and prominent scene transitions. 
+        </p>
+ 
+         <div class="video-slider">
+          <iframe src="https://www.youtube.com/embed/7dN5e-Y-W1k" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Pzbm2IW7XO4" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/QQZX02iBTvY" allowfullscreen></iframe>
+
+        </div>
+        
+
+      <h3><h2 class="title" style="font-size: 32px">Generating plausible physical dynamics during garment interactions</h2></h3>
+
+         <p class="styled-text">
+          <b>*</b> Try-On Master can generate realistic physical dynamics in scenarios involving garment interactions, for example, inserting hands into pockets or interacting with soft clothing materials.
+        </p>
+        <!-- <div class="video-slider">
+            <video controls src="video/gen1.mp4"></video>
+            <video controls src="video/gen2.mp4"></video>
+        </div> -->
+
+        <div class="video-slider">
+          <iframe src="https://www.youtube.com/embed/5p0nfis3UQs" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/yn6VrVdhI2Y" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/LBFQeIoWRvA" allowfullscreen></iframe>
+ 
+        </div>
+
+
+      <h3><h2 class="title" style="font-size: 32px">Outfitting cartoon characters in highly demanding scenarios</h2></h3>
+
+         <p class="styled-text">
+          <b>*</b> Even more interestingly, Try-On Master is capable of outfitting cartoon characters with real-world garments, even in highly demanding scenarios involving unrestricted subject poses or camera movement and dynamic scenes.       
+         </p>
+
+        <div class="video-slider">
+          <iframe src="https://www.youtube.com/embed/71wh_QwV9xw" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/GJK0ZhYhkU8" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/KkXs3nbmnrM" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/K0zQQBrZ9AI" allowfullscreen></iframe>       
+          <iframe src=" https://www.youtube.com/embed/WfLDgOwq1T0" allowfullscreen></iframe>               
+          
+          <iframe src="https://www.youtube.com/embed/HHUSIMmwGlI" allowfullscreen></iframe>
+        </div>
+
+      
+      <h3><h2 class="title" style="font-size: 32px">Try-on Show Time</h2></h3>
+ 
+
+      
+
+        <div class="video-show-list">
+          <iframe src="https://www.youtube.com/embed/FC891PQHjxg" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/mLv3jXXl6D0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/s-dUEixsdnk" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/yZ_hVhzUiGE" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/yxqTZXkhNzE" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/oWQkzhpmtuw" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/HfQP3Ytzl2w" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/KujNcfkCua4" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/hzykn0riZ-I" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/oST6jS1FK3k" allowfullscreen></iframe>
+        </div>
+
+
+        
+      
+
+      <section class="hero is-light page-concerns">
+          <h2 class="title" style="font-size: 32px">Ethics Concerns</h2>
+          <div class="content has-text-justified page-abstract-text">
+              <p>
+                  The images and audios used in these demos are from public sources or generated by models, and are solely used to demonstrate the capabilities of this research work. If there are any concerns, please contact us (dongxin.1016@bytedance.com) and we will delete it in time.
+              </p>
+
+          </div>
+      </section>
+
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+  <script src="index.js"></script>
+  <!-- 引入 jQuery (Slick 依赖) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 引入 Slick JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+      // 当文档加载完成后初始化 Slick
+      $(document).ready(function(){
+          $('.video-slider').slick({
+              slidesToShow: 2,      // 同时显示2个项目
+              slidesToScroll: 2,    // 每次滚动2个项目
+              dots: true,           // 显示导航点
+              arrows: true,         // 显示前后箭头
+              autoplay: false,       // 自动播放(可选)
+              autoplaySpeed: 2000,  // 自动播放速度(可选)
+              responsive: [         // 响应式配置
+                  {
+                      breakpoint: 768,  // 在768px宽度以下
+                      settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                      }
+                  }
+              ]
+          });
+      });
+  </script>
+</body>
+
+
+
+</html>
