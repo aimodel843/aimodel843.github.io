@@ -14,15 +14,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <link href="./static/css/main.4017e162.css" rel="stylesheet">
   <meta name="description"
-        content="Try-On Master: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-wise Diffusion Transformer Framework">
-  <title>Try-On Master Project</title>
+        content="DreamVVT: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-Wise Diffusion Transformer Framework">
+  <title>DreamVVT Project</title>
 </head>
 
 <body>
 
   <div id="root" class="column-flex">
     <div id="title-flex" class="column-flex">
-      <h1> Try-On Master: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-wise Diffusion Transformer Framework </h1>
+      <h1> DreamVVT: Mastering Realistic Video Virtual Try-On in the Wild via a Stage-Wise Diffusion Transformer Framework </h1>
      
       <div class="flex flex-gap" style="margin-bottom:0.5em;">
         <a target="_blank" href="" ><button>Paper</button></a>
@@ -37,15 +37,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified page-abstract-text">
             <p>
-Despite the rapid advancement of video generation technologies, video virtual try-on (VVT) in unrestricted scenarios—such as challenging subject or camera motion, dynamic scenes, and diverse character styles—remains unexplored. Specifically, current approaches encounter three major limitations.
-First, these methods rely heavily on scarce paired garment-centric datasets, which significantly limits their applicability to arbitrary garments and complex video inputs.
-Second, substantial spatial misalignment arises when deforming entire garment images to spatiotemporally varying regions across video frames, which  hinders effective model convergence due to conflicts with the priors of pretrained video models. 
-Third, relying solely on front-view garment images can mislead the generation of video frames from markedly different viewpoints.
-To address these challenges, we propose <b>Try-On Master</b>, a stage-wise framework built upon Diffusion Transformers (DiTs) that systematically decomposes the VVT task into three consecutive stages.
-In the first stage, a keyframe sampling strategy is employed to identify frames exhibiting pronounced motion or viewpoint variations, thereby providing diverse and informative cues for subsequent video generation.
-Next, the second stage employs a multi-frame try-on model trained with large-scale person-to-person image data, enabling the precise mapping of arbitrary garment types onto the selected keyframes.
-Finally, the third stage introduces a multi-modal guided video editing model equipped with a visual adapter, which leverages spatially aligned keyframe try-on images generated in the previous stage, along with motion features and prompts, to synthesize visually coherent virtual try-on videos. This approach facilitates the full utilization of priors from pretrained video models and readily available unpaired human-centric videos.
-Extensive quantitative and qualitative experiments demonstrate that Try-On Master surpasses existing methods in preserving high-fidelity garment details and temporal stability in real-world scenarios. 
+Video virtual try-on (VVT) technology has garnered considerable academic interest owing to its promising applications in e-commerce advertising and entertainment. However, most existing methods rely heavily on scarce paired garment-centric datasets and fail to effectively leverage prior knowledge, making it challenging to maintain temporal consistency and accurately preserve fine-grained garment details in unconstrained scenarios or with arbitrary garment inputs.
+To address these challenges, we propose \textbf{DreamVVT}, a stage-wise framework built upon Diffusion Transformers (DiTs) that systematically decomposes the VVT task into three consecutive stages.
+In the first two stages, we propose a keyframe sampling strategy, followed by a multi-frame try-on model integrated with a vision-language model (VLM) to synthesize high-fidelity and semantically consistent keyframe try-on images, thereby providing spatially aligned and rich appearance information for subsequent video generation. Notably, the multi-frame try-on model is fine-tuned on a large proportion of person-to-person image data, enabling it to handle arbitrary types of garments.
+In the final stage, a multimodal guided video editing model with adapters, trained on diverse human-centric data, is employed to integrate the keyframe try-on images, pose features, and  textual descriptions through a spatiotemporal attention mechanism, leading to the generation of temporally stable and visually realistic virtual try-on videos.
+Extensive quantitative and qualitative experiments demonstrate that DreamVVT surpasses existing methods in preserving high-fidelity garment details and temporal stability in real-world scenarios. 
             </p>
         </div>
     </div>
@@ -64,11 +60,11 @@ Extensive quantitative and qualitative experiments demonstrate that Try-On Maste
       
       <h3><h2 class="title" style="font-size: 32px">High-fidelity garment detail preservation under complex motion</h2></h3>
         <p class="styled-text">
-          <b>*</b> Try-On Master enables virtual try-on of complete outfits—including tops, bottoms, skirts, shoes, socks, and more. If a user uploads only a top, the model can automatically generate and match appropriate bottoms and footwear to complete the outfit. This capability is not available in previous methods.
+          <b>*</b> DreamVVT enables virtual try-on of complete outfits—including tops, bottoms, skirts, shoes, socks, and more. If a user uploads only a top, the model can automatically generate and match appropriate bottoms and footwear to complete the outfit. This capability is not available in previous methods.
         
         </p>
          <p class="styled-text">
-          <b>*</b> Try-On Master is capable of handling complex human motions, including runway walks and 360-degree rotations, with high fidelity in garment detail preservation and robust temporal consistency.
+          <b>*</b> DreamVVT is capable of handling complex human motions, including runway walks and 360-degree rotations, with high fidelity in garment detail preservation and robust temporal consistency.
         
         </p>
  
@@ -85,7 +81,7 @@ Extensive quantitative and qualitative experiments demonstrate that Try-On Maste
       <h3><h2 class="title" style="font-size: 32px">High-fidelity garment detail preservation in challenging scenarios</h2></h3>
 
          <p class="styled-text">
-          <b>*</b> Try-On Master is capable of enabling virtual try-on in videos featuring subjects within complex static or dynamic environments.
+          <b>*</b> DreamVVT is capable of enabling virtual try-on in videos featuring subjects within complex static or dynamic environments.
         </p>
  
         <div class="video-slider">
@@ -99,7 +95,7 @@ Extensive quantitative and qualitative experiments demonstrate that Try-On Maste
       <h3><h2 class="title" style="font-size: 32px">High-fidelity garment rendering under challenging camera dynamics</h2></h3>
 
          <p class="styled-text">
-          <b>*</b> Try-On Master can preserve temporal consistency and high-fidelity garment details, even when the input video features challenging camera movements and prominent scene transitions. 
+          <b>*</b> DreamVVT can preserve temporal consistency and high-fidelity garment details, even when the input video features challenging camera movements and prominent scene transitions. 
         </p>
  
          <div class="video-slider">
@@ -113,7 +109,7 @@ Extensive quantitative and qualitative experiments demonstrate that Try-On Maste
       <h3><h2 class="title" style="font-size: 32px">Generating plausible physical dynamics during garment interactions</h2></h3>
 
          <p class="styled-text">
-          <b>*</b> Try-On Master can generate realistic physical dynamics in scenarios involving garment interactions, for example, inserting hands into pockets or interacting with soft clothing materials.
+          <b>*</b> DreamVVT can generate realistic physical dynamics in scenarios involving garment interactions, for example, inserting hands into pockets or interacting with soft clothing materials.
         </p>
         <!-- <div class="video-slider">
             <video controls src="video/gen1.mp4"></video>
@@ -131,7 +127,7 @@ Extensive quantitative and qualitative experiments demonstrate that Try-On Maste
       <h3><h2 class="title" style="font-size: 32px">Outfitting cartoon characters in highly demanding scenarios</h2></h3>
 
          <p class="styled-text">
-          <b>*</b> Even more interestingly, Try-On Master is capable of outfitting cartoon characters with real-world garments, even in highly demanding scenarios involving unrestricted subject poses or camera movement and dynamic scenes.       
+          <b>*</b> Even more interestingly, DreamVVT is capable of outfitting cartoon characters with real-world garments, even in highly demanding scenarios involving unrestricted subject poses or camera movement and dynamic scenes.       
          </p>
 
         <div class="video-slider">
